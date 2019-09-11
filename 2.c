@@ -32,7 +32,7 @@ int main()
         printf("%lli ",a[i]);
     }
     putchar('\n');
-    printf("%d %d",s,c);
+    printf("%lli %lli",s,c);
     return 0;
 }
 
