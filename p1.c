@@ -1,31 +1,26 @@
-/* Author : Kautuk Raj */
 #include <stdio.h>
 int main()
 {
-
-    const long long n=20;
-	long long a[n];
-    long long i,j,t,m,s=0,c=0;
+    const long long n= 20;
+    long long a[n];
+    long long i,j,t,s=0,c=0;
     for (i = 0; i < n; i++)
         scanf("%lli,", &a[i]); /* reading formatted input from console */
 
     for (i=0;i<n-1;i++)
-    {   
-        m=i;
-		for (j=i+1;j<n;j++)
+    {
+        for (j=0;j<n-1-i;j++)
         {
             c++;
-            if (a[m]>a[j])
-            m=j;
+            if (a[j]>a[j+1])
+            {
+                s++;
+                t=a[j];
+                a[j]=a[j+1];
+                a[j+1]=t;
+            }
         }
-        
-        
-        s++;
-		t=a[m];
-        a[m]=a[i];
-        a[i]=t;
     }
-    
 
     for (i=0;i<n;i++)
     {
@@ -35,5 +30,3 @@ int main()
     printf("%d %d",s,c);
     return 0;
 }
-
-

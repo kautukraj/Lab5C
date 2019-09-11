@@ -3,7 +3,7 @@
 int main()
 {
     int n=20;
-    int a[n];
+    long a[n];
     int i,j,t,s=0,c=0;
     for (i = 0; i < n; i++)
         scanf("%d,", &a[i]); /* reading formatted input from console */
