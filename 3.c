@@ -35,15 +35,15 @@ void sort(long long int a[],long long int i,long long int j)
 	}
 }
  
-void merge(long long int a[],long long int i1,long long int j1,long long int i2,long long int j2)
+void merge(long long int a[],long long int f1,long long int r1,long long int f2,long long int r2)
 {
 	long long int temp[n];	
 	long long int i,j,k;
-	i=i1;
-	j=i2;
+	i=f1;
+	j=f2;
 	k=0;
 	
-	while(i<=j1 && j<=j2)
+	while(i<=r1 && j<=r2)
 	{
 		if(a[i]<a[j])
 			temp[k++]=a[i++]; /* filling in the auxillary array */
@@ -51,13 +51,13 @@ void merge(long long int a[],long long int i1,long long int j1,long long int i2,
 			temp[k++]=a[j++]; /* filling in the auxillary array */
 	}
 	
-	while(i<=j1)
+	while(i<=r1)
 		temp[k++]=a[i++];
 		
-	while(j<=j2)
-		temp[k++]=a[j++];
+	while(j<=r2)
+		temp[k++]=a[j++];  
 		
 	
-	for(i=i1,j=0;i<=j2;i++,j++) /* transferring elments back to main array from auxillary array */
+	for(i=f1,j=0;i<=r2;i++,j++) /* transferring elments back to main array from auxillary array */
 		a[i]=temp[j];
 }

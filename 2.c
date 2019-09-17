@@ -1,16 +1,27 @@
 /* Author : Kautuk Raj */
 /* C program for the implementation of selection sort algorithm */
 #include <stdio.h>
+int n=20;
+long long c,s;
 int main()
 {
 
-    long long n=20;
 	long long a[n];
-    long long i,j,t,m,s=0,c=0;
+    long long i,j;
     for (i = 0; i < n; i++)
         scanf("%lld,", &a[i]); /* reading formatted input from console */
-
-    for (i=0;i<n-1;i++)
+    ssort(a);   
+	for (i=0;i<n;i++)
+    {
+        printf("%lld ",a[i]); /* using format specifier lld for long long int */
+    }
+    printf("\n%lld %lld",s,c);
+    return 0;
+}
+void ssort(int a[])
+{
+	long long i,m,j,t;
+	for (i=0;i<n-1;i++)
     {   
         
 		m=i; /* assigning minimum index as i */
@@ -22,18 +33,13 @@ int main()
         }
         
 		t=a[i];
-        a[i]=a[m];
+        a[i]=a[m]; /* swapping the values */
         a[m]=t;
         s++; /* increasing the number of swaps by one */
     }
     
 
-    for (i=0;i<n;i++)
-    {
-        printf("%lld ",a[i]); /* using format specifier lld for long long int */
-    }
-    printf("\n%lld %lld",s,c);
-    return 0;
+    
 }
 
 
